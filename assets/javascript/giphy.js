@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //create starting array
-  var topics = [
+  var giphys = [
     "miami marlins",
     "batman",
     "ironman",
@@ -18,19 +18,19 @@ $(document).ready(function() {
     $("#buttons-go-here").empty(); //so there won't be repeat buttons
     
     //loop through array
-    for (var i = 0; i < topics.length; i++) {
+    for (var i = 0; i < giphys.length; i++) {
      
       //dynamically create buttons for all items in array
       var a = $("<button>");
      
       //add class
-      a.addClass("topics");
+      a.addClass("giphys");
      
       //add attribute & value of array item at index i
-      a.attr("data-search", topics[i]);
+      a.attr("data-search", giphys[i]);
      
       //button's text
-      a.text(topics[i]);
+      a.text(giphys[i]);
      
       //inserting buttons into HTML
       $("#buttons-go-here").append(a);
@@ -50,9 +50,9 @@ $(document).ready(function() {
     var textBox = $("#input")
       .val()
       .trim();
-    topics.push(textBox);
+    giphys.push(textBox);
     renderButtons();
-    console.log(topics);
+    console.log(giphys);
   });
 
   renderButtons();
@@ -60,7 +60,7 @@ $(document).ready(function() {
   
   //Gifs will generate when button is clicked
   
-  $(document).on("click", ".topics", function() {
+  $(document).on("click", ".giphys", function() {
   
     var x = $(this).data("search");
     console.log(x);
